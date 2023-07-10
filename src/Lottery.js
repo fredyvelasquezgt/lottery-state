@@ -3,12 +3,12 @@ import React, { Component } from 'react';
 class Lottery extends Component {
     static defaultProps = {
         title: 'Lotto',
-        numBalls : 6,
+        maxBalls : 6,
         maxNum: 40
     }
-    constructor() {
+    constructor(props) {
         super(props)
-        this.state = {nums: []}
+        this.state = {nums: Array.from({length: this.props.maxBalls})}
     }
 
     generate() {
@@ -31,3 +31,5 @@ class Lottery extends Component {
         )
     }
 }
+
+export default Lottery;
